@@ -75,8 +75,10 @@ for i in range(repeat):
     arg[4] = random.randint(1, 1000) # klidně přepište
     
   print(str(i) + ":", arg[0], arg[1], arg[2], arg[3], arg[4])
-  
-  #subprocess.call(["./proj2", str(arg[0]), str(arg[1]), str(arg[2]), str(arg[3]), str(arg[4])])
+
+  # tenhle řádek volá systém ať spustí ./proj2 s vybranými argumenty, pokud se kód zasekne tak došlo k deadlocku,
+  # jinak se následně pokračuje v kontrole správnosti a pořadí výpisu 
+  subprocess.call(["./proj2", str(arg[0]), str(arg[1]), str(arg[2]), str(arg[3]), str(arg[4])])
 
   wait_zakaznici = [0]
   
